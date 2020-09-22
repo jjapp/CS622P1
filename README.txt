@@ -6,7 +6,11 @@
 
 ### DT_train_binary
 
-I implemented the algorithm by using a recursive function and stored the results in a class.
+I implemented the algorithm by using a recursive function and stored the results in a class.  I did get stuck on this
+portion of the exercise.  I also used the following tutorial 'https://www.youtube.com/watch?v=LDRbO9a6XPU' to get through
+although I implemented my own version of the function.  I did use the same types of classes though and the build_tree
+function is similar.  However, I implemented my version using numpy arrays and built different helper functions.
+
 
 #### Helper Functions
 
@@ -17,7 +21,8 @@ I implemented the algorithm by using a recursive function and stored the results
 
 #### Classes
 
-* Partition: Stores the index we split on and it's value (yes or no)
+* Partition: Stores the index we split on and it's value (yes or no).  Also provides a method to
+compare an observed value with the decision point.
 * Leaf:  Stores the prediction for a leaf
 * DecisionNode: Stores a node.
 
@@ -62,3 +67,21 @@ predictions.
 ## K_Means
 
 ### K_Means(X,K, mu)
+
+#### Helper functions
+* assign_to_cluster: assigns a point to the correct cluster
+* get_centers: calculates new center points
+* get_max_distance: gets the distances between two points
+
+#### Implementation
+
+* First check for whether or not the centers are empty.  If so create random points.
+* Create a dictionary to hold each cluster
+* Use the assign_to_cluster helper function to assign points to clusters
+* Calculate new mu
+
+### K_Means_better
+
+* Loop through K_means until the distance between old mu and new mu is zero.
+* return mu
+
